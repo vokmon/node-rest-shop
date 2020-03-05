@@ -3,6 +3,12 @@ Create a new project with command
 
 Dependencies
 npm install --save express
+Auto reload
+npm install --save-dev nodemon
+Logging
+npm install --save morgan
+Body parser
+npm install body-parser
 
 Setup server.js
 Add app.js
