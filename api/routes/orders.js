@@ -6,7 +6,11 @@ const Product = require('../models/product');
 
 router.get('/', async (req, res, next) => {
   try {
-    const docs = await Order.find().select('product quantity _id');
+    const docs = await Order
+    .find()
+    .select('product quantity _id')
+    .populate('product', '_id, name');
+    // .populate('product');
     res.status(200).json({
       count: docs.length,
       orders: docs.map(doc =>{
@@ -76,7 +80,10 @@ router.post('/', async (req, res, next) => {
 
 router.get('/:orderId', async (req, res, next) => {
   try {
-    const order = await Order.findById(req.params.orderId);
+    const order = await Order
+    .findById(req.params.orderId)
+    .populate('product');
+    ;
     if (order) {
       res.status(200).json({
         order: order,
@@ -94,10 +101,6 @@ router.get('/:orderId', async (req, res, next) => {
       error: err,
     })
   }
-  res.status(200).json({
-    message: 'Order detail',
-    orderId: req.params.ordereId,
-  });
 });
 
 router.delete('/:orderId', async (req, res, next) => {
