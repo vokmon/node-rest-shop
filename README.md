@@ -3,16 +3,24 @@ Create a new project with command
 
 Dependencies
 npm install --save express
+
 Auto reload
 npm install --save-dev nodemon
+
 Logging
 npm install --save morgan
+
 Body parser
 npm install body-parser
+
 Mongo
 npm install mongoose
+
 Multer: handle multipart/form-data for uploading file e.g. images
 npm install multer
+
+Encrypt password for the signup process
+npm install bcryptjs
 
 Setup server.js
 Add app.js
