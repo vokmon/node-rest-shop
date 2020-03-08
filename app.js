@@ -13,7 +13,15 @@ mongoose.connect(`mongodb+srv://node-rest-shop:${process.env.MONGO_ATLAS_PWD}@no
   useUnifiedTopology: true,
 });
 
+// logger
 app.use(morgan('dev'));
+
+// make 'uploads' folder publicly available
+// url path 'uploads' to folder uploads
+// example http://localhost:3000/uploads/2020-03-08T04_35_15.055Z-kitten-small.png
+app.use('/uploads', express.static('uploads'));
+
+// parser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 

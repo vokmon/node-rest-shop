@@ -11,6 +11,8 @@ Body parser
 npm install body-parser
 Mongo
 npm install mongoose
+Multer: handle multipart/form-data for uploading file e.g. images
+npm install multer
 
 Setup server.js
 Add app.js

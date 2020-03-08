@@ -8,7 +8,8 @@ const productSchema = mongoose.Schema({
     required: true,
     maxlength: 200
   },
-  price: { type: Number, required: true, min: [0, "Price cannot be nagative"] }
+  price: { type: Number, required: true, min: [0, "Price cannot be nagative"] },
+  productImage: {type: String, required: true}
 });
 
 module.exports = mongoose.model("Product", productSchema);
