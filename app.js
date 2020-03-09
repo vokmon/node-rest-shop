@@ -12,6 +12,7 @@ mongoose.connect(`mongodb+srv://node-rest-shop:${process.env.MONGO_ATLAS_PWD}@no
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 });
 
 // logger

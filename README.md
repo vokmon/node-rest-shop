@@ -22,6 +22,9 @@ npm install multer
 Encrypt password for the signup process
 npm install bcryptjs
 
+Generate JWT
+npm install jsonwebtoken
+
 Setup server.js
 Add app.js
 
