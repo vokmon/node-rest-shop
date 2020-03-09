@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const multer = require('multer');
+const checkAuth = require('../middleware/check-auth');
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, './uploads')
@@ -61,7 +63,8 @@ router.get('/', async (req, res, next) => {
 
 });
 
-router.post('/', upload.single('productImage'), async (req, res, next) => {
+// make post a protected route
+router.post('/', checkAuth, upload.single('productImage'), async (req, res, next) => {
   try {
     console.log(req.file);
 
