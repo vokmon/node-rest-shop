@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "debug": "nodemon --inspect server.js"
+    "start": "nodemon -r dotenv/config server.js dotenv_config_path=config/.env.dev",
+    "debug": "nodemon --inspect -r dotenv/config server.js dotenv_config_path=config/.env.dev",
+    "staging": "node -r dotenv/config server.js dotenv_config_path=config/.env.staging",
+    "production": "node -r dotenv/config server.js dotenv_config_path=config/.env.production"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.3",

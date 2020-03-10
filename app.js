@@ -9,6 +9,9 @@ const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/users');
 const checkAuth = require('./api/middleware/check-auth');
 
+console.log(process.env.MONGO_ATLAS_PWD);
+console.log(process.env.JWT_KEY);
+
 mongoose.connect(`mongodb+srv://node-rest-shop:${process.env.MONGO_ATLAS_PWD}@node-rest-shop-wmqrd.mongodb.net/node-rest-shop?retryWrites=true&w=majority`,
 {
   useNewUrlParser: true,

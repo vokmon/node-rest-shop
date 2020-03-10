@@ -1,6 +1,0 @@
-{
-  "env": {
-    "MONGO_ATLAS_PWD": "node-rest-shop",
-    "JWT_KEY": "my-srcret"
-  }
-}

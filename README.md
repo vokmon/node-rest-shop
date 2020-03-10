@@ -25,6 +25,11 @@ npm install bcryptjs
 Generate JWT
 npm install jsonwebtoken
 
+Manage multiple environments
+npm install dotenv
+
+
+
 Setup server.js
 Add app.js
 
